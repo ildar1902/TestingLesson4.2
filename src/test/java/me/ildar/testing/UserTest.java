@@ -10,9 +10,9 @@ public class UserTest {
 
     @Test
     public void editUserWithTwoParamTest() {
-        User user = new User("login", "mail");
+        User user = new User("user", "user@mail.ru");
 
-        assertNotNull(user);
+        assertNotNull(user.getLogin(), user.getEmail());
     }
 
     @BeforeEach
@@ -21,10 +21,8 @@ public class UserTest {
     }
 
     @Test
-
     public void editUserWithoutParamTest() {
-
-        assertNotNull(user);
+        assertNull(user.getLogin(), user.getEmail());
     }
 
     @Test
@@ -36,6 +34,7 @@ public class UserTest {
 
         assertTrue(check);
     }
+
     @Test
     public void checkEqualsEmailAndLoginTest() {
         user.setLogin("ildar");
