@@ -1,12 +1,9 @@
 package me.ildar.testing;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
-    User user;
 
     @Test
     public void editUserWithTwoParamTest() {
@@ -15,18 +12,16 @@ public class UserTest {
         assertNotNull(user.getLogin(), user.getEmail());
     }
 
-    @BeforeEach
-    public void setUp() {
-        user = new User();
-    }
-
     @Test
     public void editUserWithoutParamTest() {
+        User user = new User();
+
         assertNull(user.getLogin(), user.getEmail());
     }
 
     @Test
     public void checkCorrectnessUsersEmailTest() {
+        User user = new User();
         user.setLogin("ildar");
         user.setEmail("ildar@mail.ru");
         boolean check;
@@ -37,6 +32,7 @@ public class UserTest {
 
     @Test
     public void checkEqualsEmailAndLoginTest() {
+        User user = new User();
         user.setLogin("ildar");
         user.setEmail("ildar@mail.ru");
 
