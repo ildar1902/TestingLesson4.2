@@ -7,7 +7,9 @@ public class UserTest {
 
     @Test
     public void editUserWithTwoParamTest() {
-        User user = new User("user", "user@mail.ru");
+        String login = "user";
+        String email = "user@mail.ru";
+        User user = new User(login, email);
 
         assertNotNull(user.getLogin(), user.getEmail());
     }
@@ -21,9 +23,9 @@ public class UserTest {
 
     @Test
     public void checkCorrectnessUsersEmailTest() {
-        User user = new User();
-        user.setLogin("ildar");
-        user.setEmail("ildar@mail.ru");
+        String login = "user";
+        String email = "user@mail.ru";
+        User user = new User(login, email);
         boolean check;
         check = user.getEmail().contains("@") && user.getEmail().contains(".");
 
@@ -32,9 +34,9 @@ public class UserTest {
 
     @Test
     public void checkEqualsEmailAndLoginTest() {
-        User user = new User();
-        user.setLogin("ildar");
-        user.setEmail("ildar@mail.ru");
+        String login = "user";
+        String email = "user@mail.ru";
+        User user = new User(login, email);
 
         assertNotEquals(user.getLogin(), user.getEmail());
 
